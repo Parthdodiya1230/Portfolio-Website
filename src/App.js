@@ -11,9 +11,11 @@ import Navbar from "./components/navBar";
 import Particles from "./utils/particles";
 
 function App() {
-  const location = useLocation();
 
-  const renderPartcilesJSinHomePage = location.pathname === ("/Portfolio-Website" || "/Portfolio-Website/");
+  const location = useLocation();
+  console.log(location.pathname);
+
+  const renderPartcilesJSinHomePage = location.pathname === "/Portfolio-Website" || "/Portfolio-Website/";
   return (
     <div className="App">
       {renderPartcilesJSinHomePage && <Particles id="particles" />}
