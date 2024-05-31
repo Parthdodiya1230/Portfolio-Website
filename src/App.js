@@ -13,7 +13,7 @@ import Particles from "./utils/particles";
 function App() {
   const location = useLocation();
 
-  const renderPartcilesJSinHomePage = location.pathname === "/";
+  const renderPartcilesJSinHomePage = location.pathname === ("/Portfolio-Website" || "/Portfolio-Website/");
   return (
     <div className="App">
       {renderPartcilesJSinHomePage && <Particles id="particles" />}
@@ -21,7 +21,7 @@ function App() {
       <Navbar />
       <div className="App_main-page-content">
         <Routes>
-          <Route index path="/" element={<Home />} />
+          <Route index path="/Portfolio-Website" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />

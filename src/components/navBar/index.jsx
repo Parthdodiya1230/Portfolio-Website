@@ -22,7 +22,7 @@ const Navbar = () => {
     <div>
       <nav className="navbar">
         <div className="navbar_container">
-          <Link to="/" className="navbar_container_logo">
+          <Link to="/Portfolio-Website" className="navbar_container_logo">
             <FaReact size={30} />
           </Link>
         </div>
