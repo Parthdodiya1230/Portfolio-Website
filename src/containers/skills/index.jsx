@@ -23,7 +23,7 @@ const Skills = () => {
             end={{
               transform: "translate(0px)",
             }}>
-              <h3 className='skills_content_inner-content_catagory'>{item.label}</h3>
+              <h3 className='skills_content_inner-content_catagory' key={i}>{item.label}</h3>
               <div className='progressBar-container'>
                 {
                   item.data.map((skillItem, j)=>(
