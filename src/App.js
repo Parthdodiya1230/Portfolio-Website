@@ -15,7 +15,7 @@ function App() {
   const location = useLocation();
   console.log(location.pathname);
 
-  const renderPartcilesJSinHomePage = location.pathname === "/Portfolio-Website" || "/Portfolio-Website/";
+  const renderPartcilesJSinHomePage = location.pathname === "/Portfolio-Website" || location.pathname === "/Portfolio-Website/";
   return (
     <div className="App">
       {renderPartcilesJSinHomePage && <Particles id="particles" />}
