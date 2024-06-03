@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useRef } from "react";
 import PageHeaderContent from "../../components/pageHeaderContent";
 import { IoIosContact } from "react-icons/io";
 import { Animate } from "react-simple-animate";
+import emailjs from '@emailjs/browser';
 import './styles.scss'
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_18by0kt', 'template_yn3arwi', form.current, {
+        publicKey: 'UeZb6peYOKVLiXjGG',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          alert('Your mail has been sent');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          alert('your mail is not sent');
+        },
+      );
+
+      e.target.reset();
+  };
   return (
     <section id="contact" className="contact">
       <PageHeaderContent
@@ -38,31 +61,31 @@ const Contact = () => {
           }}
         >
           <div className="contact_content_form">
-            <form className="contact_content_form_controls">
+            <form className="contact_content_form_controls" ref={form} onSubmit={sendEmail}>
               <div>
-                <input required name="name" className="inputName" type={"text"}></input>
-                <label htmlFor="name" className="nameLabel">
+                <input required name="from_name" className="inputName" type={"text"}></input>
+                <label htmlFor="from_name" className="nameLabel">
                   Name
                 </label>
               </div>
               <div>
                 <input required
-                  name="email"
+                  name="from_email"
                   className="inputEmail"
                   type={"text"}
                 ></input>
-                <label htmlFor="email" className="emailLabel">
+                <label htmlFor="from_email" className="emailLabel">
                   Email
                 </label>
               </div>
               <div>
                 <textarea required
-                  name="description"
+                  name="message"
                   className="inputDescription"
                   type={"text"}
                   rows={5}
                 />
-                <label htmlFor="description" className="descriptionLabel">
+                <label htmlFor="message" className="descriptionLabel">
                   Description
                 </label>
               </div>
