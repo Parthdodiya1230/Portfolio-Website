@@ -15,7 +15,7 @@ function App() {
   const location = useLocation();
   console.log(location.pathname);
 
-  const renderPartcilesJSinHomePage = location.pathname === "/Portfolio-Website" || location.pathname === "/Portfolio-Website/";
+  const renderPartcilesJSinHomePage = location.pathname === "/";
   return (
     <div className="App">
       {renderPartcilesJSinHomePage && <Particles id="particles" />}
@@ -23,7 +23,7 @@ function App() {
       <Navbar />
       <div className="App_main-page-content">
         <Routes>
-          <Route index path="/Portfolio-Website" element={<Home />} />
+          <Route index path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />

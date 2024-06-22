@@ -1,7 +1,7 @@
 export const data = [
     {
       label: "HOME",
-      to: "/Portfolio-Website",
+      to: "/",
     },
     {
       label: "ABOUT ME",
