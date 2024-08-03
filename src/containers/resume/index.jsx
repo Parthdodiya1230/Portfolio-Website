@@ -5,10 +5,10 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { AiOutlineProfile } from "react-icons/ai";
-import { data } from '../../utils/resumeData'
-import  "react-vertical-timeline-component/style.min.css"
-import './styles.scss'
-import {MdWork} from 'react-icons/md'
+import { data } from "../../utils/resumeData";
+import "react-vertical-timeline-component/style.min.css";
+import "./styles.scss";
+import { MdWork } from "react-icons/md";
 
 const Resume = () => {
   return (
@@ -19,7 +19,9 @@ const Resume = () => {
       />
       <div className="timeline">
         <div className="timeline_experience">
-          <h3 className="timeline_experience_header">Positions Of Responsibilities</h3>
+          <h3 className="timeline_experience_header">
+            Positions Of Responsibilities
+          </h3>
           <VerticalTimeline
             layout={"1-column"}
             lineColor="var(--yellow-theme-main-color)"
@@ -29,24 +31,23 @@ const Resume = () => {
                 key={i}
                 className="timeline_experience_vte"
                 contentStyle={{
-                  background:'none',
-                  color : 'var(--yellow-theme-sub-text-color)',
-                  border:'1.5px solid var(--yellow-theme-main-color)',
+                  background: "none",
+                  color: "var(--yellow-theme-sub-text-color)",
+                  border: "1.5px solid var(--yellow-theme-main-color)",
                 }}
-                
-                icon = { <MdWork/>} 
+                icon={<MdWork />}
                 iconStyle={{
-                  background:'#181818',
-                  color : 'var(--yellow-theme-main-color)',
-
+                  background: "#181818",
+                  color: "var(--yellow-theme-main-color)",
                 }}
               >
                 <div className="vte-title-wrapper">
-                  <h3 >{item.title}</h3>
-                  <h4 >{item.subTitle}</h4>
-                  
+                  <h3>{item.title}</h3>
+                  <h4>{item.subTitle}</h4>
                 </div>
-                <p className="vte-title-wrapper-description">{item.description}</p>
+                <p className="vte-title-wrapper-description">
+                  {item.description}
+                </p>
               </VerticalTimelineElement>
             ))}
           </VerticalTimeline>
@@ -56,31 +57,29 @@ const Resume = () => {
           <VerticalTimeline
             layout={"1-column"}
             lineColor="var(--yellow-theme-main-color)"
-            
           >
             {data.education.map((item, i) => (
               <VerticalTimelineElement
                 key={i}
                 className="timeline_education_vte"
                 contentStyle={{
-                  background:'none',
-                  color : 'var(--yellow-theme-sub-text-color)',
-                  border:'1.5px solid var(--yellow-theme-main-color)',
+                  background: "none",
+                  color: "var(--yellow-theme-sub-text-color)",
+                  border: "1.5px solid var(--yellow-theme-main-color)",
                 }}
-                
-                icon = { <MdWork/>} 
+                icon={<MdWork />}
                 iconStyle={{
-                  background:'#181818',
-                  color : 'var(--yellow-theme-main-color)',
-
+                  background: "#181818",
+                  color: "var(--yellow-theme-main-color)",
                 }}
               >
-                
                 <div className="vte-title-wrapper">
-                  <h3 >{item.title}</h3>
-                  <h4 >{item.subTitle}</h4>
+                  <h3>{item.title}</h3>
+                  <h4>{item.subTitle}</h4>
                 </div>
-                <p className="vte-title-wrapper-description">{item.description}</p>
+                <p className="vte-title-wrapper-description">
+                  {item.description}
+                </p>
               </VerticalTimelineElement>
             ))}
           </VerticalTimeline>
@@ -91,5 +90,3 @@ const Resume = () => {
 };
 
 export default Resume;
-
-

@@ -27,7 +27,7 @@ const Portfolio = () => {
     setFilteredValue(currentId);
   }
 
-  function handleHover(i){
+  function handleHover(i) {
     setHoveredValue(i);
   }
 
@@ -57,30 +57,29 @@ const Portfolio = () => {
 
         <div className="portfolio_content_cards">
           {filteredItems.map((item, i) => (
-            
             <div
               className="portfolio_content_cards_item"
               key={`cardItem${item.name.trim()}`}
-              onMouseEnter={()=>handleHover(i)}
-              onMouseLeave={()=>handleHover(null)}
+              onMouseEnter={() => handleHover(i)}
+              onMouseLeave={() => handleHover(null)}
             >
               <div className="portfolio_content_cards_item_img">
                 <a>
                   <img src={item.image} alt="dummy data" />
                 </a>
               </div>
-              
+
               <div className="overlay">
-                { 
-                  i === hoveredValue ? (
-                    <div>
-                      <p>{item.name}</p>
-                      <a href={item.link} target="_blank">
-                        <button >Visit</button>
-                      </a>
-                    </div>
-                  ) : ""
-                }
+                {i === hoveredValue ? (
+                  <div>
+                    <p>{item.name}</p>
+                    <a href={item.link} target="_blank">
+                      <button>Visit</button>
+                    </a>
+                  </div>
+                ) : (
+                  ""
+                )}
               </div>
             </div>
           ))}

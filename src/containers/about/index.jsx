@@ -5,7 +5,7 @@ import { Animate } from "react-simple-animate";
 import { DiApple } from "react-icons/di";
 import { FaDev, FaDatabase } from "react-icons/fa";
 import { AiFillCopyrightCircle } from "react-icons/ai";
-import "./styles.scss" ;
+import "./styles.scss";
 
 const personalDetails = [
   {
@@ -30,7 +30,8 @@ const personalDetails = [
   },
 ];
 
-const jobSummary = "Hello, my name is Parth. Currently I am 3rd year Undergraduate Student of Computer Science and Engineering branch at Indian Institue of Technology Bhubaneswar. I am from Rajkot, Gujarat. ";
+const jobSummary =
+  "Hello, my name is Parth. Currently I am 3rd year Undergraduate Student of Computer Science and Engineering branch at Indian Institue of Technology Bhubaneswar. I am from Rajkot, Gujarat. ";
 
 const About = () => {
   return (
@@ -68,10 +69,10 @@ const About = () => {
           >
             <h3 className="personalInformation">Personal Information</h3>
             <ul>
-              {personalDetails.map((intem, i) => (
+              {personalDetails.map((item, i) => (
                 <li key={i}>
-                  <span className="title">{intem.label}</span>
-                  <span className="value">{intem.value}</span>
+                  <span className="title">{item.label}</span>
+                  <span className="value">{item.value}</span>
                 </li>
               ))}
             </ul>
@@ -89,28 +90,25 @@ const About = () => {
               transform: "translate(0px)",
             }}
           >
-          <div className="about_content_services_innerContent">
-            <div>
-              <FaDev size={60} color="var(--yellow-theme-main-color)" />
+            <div className="about_content_services_innerContent">
+              <div>
+                <FaDev size={60} color="var(--yellow-theme-main-color)" />
+              </div>
+              <div>
+                <FaDatabase size={60} color="var(--yellow-theme-main-color)" />
+              </div>
+              <div>
+                <DiApple size={60} color="var(--yellow-theme-main-color)" />
+              </div>
+              <div>
+                <AiFillCopyrightCircle
+                  size={60}
+                  color="var(--yellow-theme-main-color)"
+                />
+              </div>
             </div>
-            <div>
-              <FaDatabase size={60} color="var(--yellow-theme-main-color)" />
-            </div>
-            <div>
-              <DiApple size={60} color="var(--yellow-theme-main-color)" />
-            </div>
-            <div>
-              <AiFillCopyrightCircle
-                size={60}
-                color="var(--yellow-theme-main-color)"
-              />
-            </div>
-          </div>
           </Animate>
-
-
         </div>
-
       </div>
     </section>
   );

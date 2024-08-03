@@ -2,8 +2,8 @@ import React, { useRef } from "react";
 import PageHeaderContent from "../../components/pageHeaderContent";
 import { IoIosContact } from "react-icons/io";
 import { Animate } from "react-simple-animate";
-import emailjs from '@emailjs/browser';
-import './styles.scss'
+import emailjs from "@emailjs/browser";
+import "./styles.scss";
 
 const Contact = () => {
   const form = useRef();
@@ -12,21 +12,20 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_18by0kt', 'template_yn3arwi', form.current, {
-        publicKey: 'UeZb6peYOKVLiXjGG',
+      .sendForm("service_18by0kt", "template_yn3arwi", form.current, {
+        publicKey: "UeZb6peYOKVLiXjGG",
       })
       .then(
         () => {
-          console.log('SUCCESS!');
-          alert('Your mail has been sent');
+          console.log("SUCCESS!");
+          alert("Your mail has been sent");
         },
         (error) => {
-          console.log('FAILED...', error.text);
-          alert('your mail is not sent');
-        },
+          console.log("FAILED...", error.text);
+          alert("your mail is not sent");
+        }
       );
-
-      e.target.reset();
+    e.target.reset();
   };
   return (
     <section id="contact" className="contact">
@@ -61,41 +60,50 @@ const Contact = () => {
           }}
         >
           <div className="contact_content_form">
-            <form className="contact_content_form_controls" ref={form} onSubmit={sendEmail}>
+            <form
+              className="contact_content_form_controls"
+              ref={form}
+              onSubmit={sendEmail}
+            >
               <div>
-                <input required name="from_name" className="inputName" type={"text"}></input>
-                <label htmlFor="from_name" className="nameLabel">
+                <input
+                  required
+                  name="from_name"
+                  className="input"
+                  type={"text"}
+                ></input>
+                <label htmlFor="from_name" className="label">
                   Name
                 </label>
               </div>
               <div>
-                <input required
+                <input
+                  required
                   name="from_email"
-                  className="inputEmail"
+                  className="input"
                   type={"text"}
                 ></input>
-                <label htmlFor="from_email" className="emailLabel">
+                <label htmlFor="from_email" className="label">
                   Email
                 </label>
               </div>
               <div>
-                <textarea required
+                <textarea
+                  required
                   name="message"
-                  className="inputDescription"
+                  className="input"
                   type={"text"}
                   rows={5}
                 />
-                <label htmlFor="message" className="descriptionLabel">
+                <label htmlFor="message" className="label">
                   Description
                 </label>
               </div>
-              <div>
-              </div>
+              <div></div>
               <div className="submit-btn">
-                <input className="submit" type="submit" value="Submit"/>
+                <input className="submit" type="submit" value="Submit" />
               </div>
             </form>
-            {/* <button>Submit</button> */}
           </div>
         </Animate>
       </div>
